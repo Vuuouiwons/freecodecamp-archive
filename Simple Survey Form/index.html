@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <h1 id="title"> title</h1>
+        <p id="description">this is a short description<p>
+        <style rel="stylesheet" href="./styles.css"></style>
+    </head>
+      
+    <body>
+        <form id="survey-form" >
+            <label id="name-label" for="name"> 
+            enter your name: 
+            <input required id="name" type="text" placeholder="enter name">
+            </label>
+            <br>
+            <label id="email-label" for="email" > 
+            enter your email: 
+            <input required id="email" type="email" placeholder="enter email">
+            </label>
+            <br>
+            <label id="number-label" for="number">
+            enter your age (optional): 
+            <input id="number" type="number" placeholder="19" max="150" min="1">
+            </label>
+            <br>
+            <label for="dropdown">
+            whats your interest: 
+            <input list="dropdown">
+                <datalist id="dropdown">
+                <option value="computer science">
+                <option value="electrical engineering">
+                <option value="physics">
+                </datalist>
+            </label>
+            <br>
+            <label for="radio">
+            whats your option: <br>
+                <input value="option1" id="radio" type="radio" name="radio1" checked> first option <br>
+                <input value="option2" id="radio" type="radio" name="radio1"> second option<br>
+                <input value="option3" id="radio" type="radio" name="radio1"> thrid option<br>
+            </label>
+            <br>
+            <label> check these boxes <br>
+                <input type="checkbox" name="check1" value="option1"> box 1<br>
+                <input type="checkbox" name="check1" value="option2"> box 2<br>
+                <input type="checkbox" name="check1" value="option3"> box 3<br>
+            </label>
+            <label>
+            do you have anymore comments about the site? <br>
+            <textarea></textarea><br>
+            <input id="submit" type="submit">
+        </form>
+    </body>
+
+</html>
