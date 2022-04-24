@@ -1,0 +1,37 @@
+* {
+    background-color: #EEE;
+  }
+  
+  #title{
+    margin: auto;
+    text-align: center;
+  }
+  
+  #main {
+    margin: 0px 20% 0px 20%;
+    box-shadow: 0 0 1em #777;
+  }
+  
+  #img-div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  #image {
+    max-width: 100%;
+    height: auto;
+    margin: auto 7vh auto 7vh;
+  }
+  
+  #img-caption {
+    font-size: 24px;
+    font-weight: 550;
+    margin: auto;
+    margin-bottom: 2%;
+  }
+  
+  #tribute-info {
+    margin: auto;
+    margin-bottom: 2%;
+  }
