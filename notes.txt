@@ -1,0 +1,73 @@
+// d3
+const anchor = d3.select("body") // selects the body tag
+    .data(dataset) // adds the data to the d3 and will iterate each data in the dataset variable, acts as if foreach object.
+    .enter() // check the tags if no tags exsist it will make a new tag
+    .append("h1") // add the h1 tag inside the body tag
+    .text(d => d) // add text inside the h1 tag and the text is data from the dataset
+    .attr("class", "bar" /* can be writen as an anonymous function d => d*/) // set an HTML attributes to the h1 tag --> "class = bar"
+    .style("color", "red" /* can be writen as an anonymous function d => d*/) // set an inline css to h1 tag
+
+const anchorTwo = d3.select("body")
+    .data(dataset)
+    .enter()
+    .append("svg") // this adds svg tag (scalable vector graphics)
+    .append("rect") // append the rect tag inside the svg tag
+
+
+const scale = d3.scaleLinear()
+    .domain([20, 100]) // dataset lowest and highest value
+    .range([1, 19]) // range that the data will be displayed in this case it will range between 1 to 19 pixel on screen from 20 to 100 in data
+
+svg.selectAll("circle")
+    .data(dataset)
+    .enter()
+    .append("circle")
+    .attr("cx", (d) => xScale(d[0])) // call the xScale function after declaring
+    .attr("cy", (d) => yScale(d[1])) // call the yScale function after declaring
+    .attr("r", (d) => 5);
+    
+svg.selectAll("text")
+    .data(dataset)
+    .enter()
+    .append("text")
+    .text((d) => (d[0] + "," + d[1]))
+    .attr("x", (d) => xScale(d[0] + 10))
+    .attr("y", (d) => yScale(d[1]))
+
+
+const xAxis = d3.axisBottom(xScale); // make the axis on a given scale
+
+svg.append("g") // make tag to draw
+    .attr("transform", "translate(0," + (h - padding) + ")") // attribute for tranforming the axis
+    .call(xAxis); // calling the axis to draw
+
+/*
+    (0, 0)                                  (100, 0)
+    ----------------------------------------
+    |
+    |
+    |
+    |
+    |
+    |
+    |
+    |
+    |
+    |
+    | (0, 500)
+    since we want the y scale to start from the bottom we must invert the value the bigger value is the start and the lower value is the end of the scale.
+*/
+
+
+scale(1900) // we call scale as a function with data argument
+/*
+
+    tag for svg list: 
+    - property
+    - fill
+
+    svg tags has some built-in children tags
+    - rect => rectangle [attributes as follows (x, y)]
+    - circle => circle [attribues as follows (cx, cy, r)]
+    - text => text [attributes as follows (x, y)] // can be filled with text
+*/
