@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+}
+
+body {
+    background-color: rgb(59, 59, 59);
+}
+
+body div {
+    background-color: rgb(83, 83, 83);
+}
+
+.box {
+    fill: blue;
+}
