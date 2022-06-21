@@ -34,7 +34,7 @@ req.onload = () => {
 
     yScale = d3.scaleLinear()
         .domain([d3.max(dataset.monthlyVariance.map(d => d.month)), d3.min(dataset.monthlyVariance.map(d => d.month))])
-        .range([svgHeight, svgPadding])
+        .range([svgHeight -svgPadding, svgPadding])
 
     console.log(dataset["monthlyVariance"].map(d => d["month"]));
 
